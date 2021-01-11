@@ -1,0 +1,82 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.baeldung.com/springsoap/gen"
+           targetNamespace="http://www.baeldung.com/springsoap/gen" elementFormDefault="qualified"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <xs:element name="getProductRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getProductResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addProductRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="extension" type="xs:string"/>
+                <xs:element name="price" type="xs:double"/>
+                <xs:element name="sellNumber" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addProductResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteProductRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteProductResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="deleted" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateProductRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="extension" type="xs:string"/>
+                <xs:element name="price" type="xs:double"/>
+                <xs:element name="sellNumber" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateProductResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="extension" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+            <xs:element name="sellNumber" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
